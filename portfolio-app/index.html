@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHEERAJ SAI - Advanced Portfolio</title>
+    <link rel = "icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="min-h-screen bg-gray-950 text-gray-100 antialiased">
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="text-2xl font-bold text-purple-400 cursor-pointer" onclick="window.location.href='index.html'">
+            DHEERAJ SAI
+        </div>
+        <ul class="hidden md:flex space-x-8">
+            <li><a class="nav-link active" href="index.html">Home</a></li>
+            <li><a class="nav-link" href="about.html">About Me</a></li>
+            <li><a class="nav-link" href="education.html">Education</a></li>
+            <li><a class="nav-link" href="skills.html">Skills</a></li>
+            <li><a class="nav-link" href="projects.html">Projects</a></li>
+            <li><a class="nav-link" href="resume1.html">Resume</a>
+            <li><a class="nav-link" href="contact.html">Contact Me</a></li>
+        </ul>
+        <button id="mobile-menu-button" class="md:hidden text-gray-300 focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </nav>
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay">
+        <button class="text-3xl font-bold text-gray-200 hover:text-purple-400 transition-colors flex items-center space-x-3" onclick="window.location.href='index.html'">
+            <i data-lucide="home" class="w-8 h-8"></i><span>Home</span>
+        </button>
+        <button class="text-3xl font-bold text-gray-200 hover:text-purple-400 transition-colors flex items-center space-x-3" onclick="window.location.href='about.html'">
+            <i data-lucide="user" class="w-8 h-8"></i><span>About Me</span>
+        </button>
+        <button class="text-3xl font-bold text-gray-200 hover:text-purple-400 transition-colors flex items-center space-x-3" onclick="window.location.href='education.html'">
+            <i data-lucide="graduation-cap" class="w-8 h-8"></i><span>Education</span>
+        </button>
+        <button class="text-3xl font-bold text-gray-200 hover:text-purple-400 transition-colors flex items-center space-x-3" onclick="window.location.href='skills.html'">
+            <i data-lucide="code" class="w-8 h-8"></i><span>Skills</span>
+        </button>
+        <button class="text-3xl font-bold text-gray-200 hover:text-purple-400 transition-colors flex items-center space-x-3" onclick="window.location.href='projects.html'">
+            <i data-lucide="briefcase" class="w-8 h-8"></i><span>Projects</span>
+        </button>
+        <button class="text-3xl font-bold text-gray-200 hover:text-purple-400 transition-colors flex items-center space-x-3" onclick="window.location.href='resume1.html'">
+            <i data-lucide="file-text" class="w-8 h-8"></i><span>Resume</span>
+        <button class="text-3xl font-bold text-gray-200 hover:text-purple-400 transition-colors flex items-center space-x-3" onclick="window.location.href='contact.html'">
+            <i data-lucide="mail" class="w-8 h-8"></i><span>Contact Me</span>
+        </button>
+    </div>
+
+    <main>
+        <section id="home">
+            <div class="section-bg-overlay" style="background-image: url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="content-container text-center">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-4 fade-in">
+                    <span id="typewriter" class="typewriter-text"></span>
+                </h1>
+                <p class="text-2xl md:text-4xl font-semibold text-gray-300 mb-8 fade-in" style="transition-delay: 0.2s;">
+                    A Software Engineer | Cybersecurity Practitioner
+                </p>
+                <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12 fade-in" style="transition-delay: 0.4s;">
+                    Enthusiastic Cyber Security practitioner possessing a strong background in Security Operations Centre (SOC) monitoring, penetration testing, and ethical hacking. Proficient in Python for both automation and security scripting along with full-stack development for the secure building of applications. Well versed in finding vulnerabilities, reducing security risks, and implementing strong security solutions.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-6 fade-in" style="transition-delay: 0.6s;">
+                    <a href="projects.html" class="btn-base btn-primary">
+                        <i data-lucide="briefcase" class="mr-3"></i> View My Work
+                    </a>
+                    <a href="Dheeraj Sai Resume New (2).pdf" download="Dheeraj Sai Resume New (2).pdf" class="btn-base btn-secondary">
+                        <i data-lucide="download" class="mr-3"></i> Download Resume
+                    </a>
+                </div>
+                <div class="mt-12 flex justify-center space-x-6 fade-in" style="transition-delay: 0.8s;">
+                    <a href="https://www.linkedin.com/in/dheeraj-donepudi-320145276/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-500 transition-colors transform hover:scale-125">
+                        <i data-lucide="linkedin" class="w-10 h-10"></i>
+                    </a>
+                    <a href="https://github.com/dheerajdonepudi14" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-200 transition-colors transform hover:scale-125">
+                        <i data-lucide="github" class="w-10 h-10"></i>
+                    </a>
+                </div>
+
+
+            </div>
+        </section>
+    </main>
+
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - DHEERAJ SAI</title>
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="text-2xl font-bold text-purple-400 cursor-pointer" onclick="window.location.href='index.html'">
+            DHEERAJ SAI
+        </div>
+        <ul class="hidden md:flex space-x-8">
+            <li><a class="nav-link" href="index.html">Home</a></li>
+            <li><a class="nav-link" href="about.html">About Me</a></li>
+            <li><a class="nav-link" href="education.html">Education</a></li>
+            <li><a class="nav-link" href="skills.html">Skills</a></li>
+            <li><a class="nav-link" href="projects.html">Projects</a></li>
+            <li><a class="nav-link" href="resume1.html">Resume</a></li>
+            <li><a class="nav-link active" href="contact.html">Contact Me</a></li>
+        </ul>
+        <button id="mobile-menu-button" class="md:hidden text-gray-300 focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </nav>
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay">
+        <button class="text-3xl font-bold text-gray-200 hover:text-purple-400 transition-colors flex items-center space-x-3" onclick="window.location.href='index.html'">
+            <i data-lucide="home" class="w-8 h-8"></i><span>Home</span>
+        </button>
+        <button class="text-3xl font-bold text-gray-200 hover:text-purple-400 transition-colors flex items-center space-x-3" onclick="window.location.href='about.html'">
+            <i data-lucide="user" class="w-8 h-8"></i><span>About Me</span>
+        </button>
+        <button class="text-3xl font-bold text-gray-200 hover:text-purple-400 transition-colors flex items-center space-x-3" onclick="window.location.href='education.html'">
+            <i data-lucide="graduation-cap" class="w-8 h-8"></i><span>Education</span>
+        </button>
+        <button class="text-3xl font-bold text-gray-200 hover:text-purple-400 transition-colors flex items-center space-x-3" onclick="window.location.href='skills.html'">
+            <i data-lucide="code" class="w-8 h-8"></i><span>Skills</span>
+        </button>
+        <button class="text-3xl font-bold text-gray-200 hover:text-purple-400 transition-colors flex items-center space-x-3" onclick="window.location.href='projects.html'">
+            <i data-lucide="briefcase" class="w-8 h-8"></i><span>Projects</span>
+        </button>
+        <button class="text-3xl font-bold text-gray-200 hover:text-purple-400 transition-colors flex items-center space-x-3" onclick="window.location.href='resume1.html'">
+            <i data-lucide="file-text" class="w-8 h-8"></i><span>Resume</span>
+        </button>
+        <button class="text-3xl font-bold text-gray-200 hover:text-purple-400 transition-colors flex items-center space-x-3" onclick="window.location.href='contact.html'">
+            <i data-lucide="mail" class="w-8 h-8"></i><span>Contact Me</span>
+        </button>
+    </div>
+
+    <main>
+        <section id="contact">
+            <div class="section-bg-overlay" style="background-image: url('https://media.istockphoto.com/id/1315611661/photo/contact-us-sign-with-work-space-and-computer.jpg?s=2048x2048&w=is&k=20&c=_C4hzLWAU2DUlwTaIbhq1tC7w11g6201EjsVu3IKIcs=');"></div>
+            <div class="content-container max-w-2xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-10 text-center fade-in">Contact Me</h2>
+                <!-- Main Contact Form -->
+                <form id="contact-form" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-gray-300 mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-300 mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-gray-300 mb-2">Subject</label>
+                        <input type="text" id="subject" name="subject" class="form-input" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-300 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" class="form-input" required></textarea>
+                    </div>
+                    <div id="form-status" class="hidden px-4 py-3 rounded-lg text-base font-medium"></div>
+                    <button type="submit" id="send-message-btn" class="btn-base btn-primary w-full">
+                        <i data-lucide="mail" class="mr-3"></i> Send Message
+                    </button>
+                </form>
+
+                <!-- Contact Info Card -->
+                <div class="mt-10 flex flex-col items-center">
+                    <div class="bg-gray-900/80 rounded-2xl shadow-xl px-8 py-7 w-full max-w-md">
+                        <h3 class="text-xl font-bold text-purple-300 mb-5 text-center tracking-wide">Contact Information</h3>
+                        <div class="flex items-center mb-4">
+                            <span class="bg-purple-700/20 rounded-full p-2 mr-3">
+                                <i data-lucide="mail" class="w-6 h-6 text-purple-400"></i>
+                            </span>
+                            <span class="text-gray-200 text-base">dheerajdonepudi14@gmail.com</span>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <span class="bg-green-700/20 rounded-full p-2 mr-3">
+                                <i data-lucide="phone" class="w-6 h-6 text-green-400"></i>
+                            </span>
+                            <span class="text-gray-200 text-base">+91 8143965686</span>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <span class="bg-blue-700/20 rounded-full p-2 mr-3">
+                                <i data-lucide="map-pin" class="w-6 h-6 text-blue-400"></i>
+                            </span>
+                            <span class="text-gray-200 text-base">Vijayawada, Andhra Pradesh, India</span>
+                        </div>
+                        <div class="flex justify-center gap-6 mt-6">
+                            <a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform" title="Instagram">
+                                <span class="bg-gradient-to-tr from-pink-500 via-red-400 to-yellow-400 rounded-full p-2">
+                                    <i data-lucide="instagram" class="w-6 h-6 text-white"></i>
+                                </span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/dheeraj-donepudi-320145276/" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform" title="LinkedIn">
+                                <span class="bg-blue-700 rounded-full p-2">
+                                    <i data-lucide="linkedin" class="w-6 h-6 text-white"></i>
+                                </span>
+                            </a>
+                            <a href="https://github.com/dheerajdonepudi14" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform" title="GitHub">
+                                <span class="bg-gray-800 rounded-full p-2">
+                                    <i data-lucide="github" class="w-6 h-6 text-white"></i>
+                                </span>
+                            </a>
+                            <a href="http://x.com/Dheeraj91790329" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform" title="Twitter">
+                                <span class="bg-sky-500 rounded-full p-2">
+                                    <i data-lucide="twitter" class="w-6 h-6 text-white"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 py-8 text-center text-gray-400 text-sm border-t border-gray-800 rounded-t-xl">
+        <p>&copy; <span id="current-year"></span> DONEPUDI DHEERAJ SAI. All rights reserved.</p>
+        <div class="flex justify-center space-x-4 mt-4">
+            <a href="https://www.linkedin.com/in/dheeraj-donepudi-320145276/" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition-colors">
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+            </a>
+            <a href="https://github.com/dheerajdonepudi14" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition-colors">
+                <i data-lucide="github" class="w-5 h-5"></i>
+            </a>
+        </div>
+    </footer>
+    <script>
+        lucide.createIcons();
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,875 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dheeraj Sai Donepudi - Resume</title>
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <!-- Link to Google Fonts for 'Inter' -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Global styles - Screen Display */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: lightslategray;
+            background-image: url('assets/images/bg.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center everything horizontally */
+            justify-content: flex-start;
+             /* Remove any blur filter if present */
+            /* filter: none; */
+           /* backdrop-filter: none; */
+        }
+
+        /* Main resume container - mimic A4 page */
+        .resume-container {
+            width: 100%;
+            max-width: 800px; /* Approximate A4 width for web */
+            background-color: rgba(26, 26, 26, 0.9); /* Dark background with 90% opacity */
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+            overflow: hidden; /* Ensures border-radius applies to children */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header section with image and profession */
+        .header-section {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, rgba(44, 44, 44, 0.9), rgba(26, 26, 26, 0.9)); /* Dark gradient background with 90% opacity */
+            padding: 40px 30px; /* Adjusted padding to match spacing in image */
+            gap: 25px; /* Increased gap */
+            position: relative; /* For the pencil icon */
+        }
+
+        .profile-img-container {
+            flex-shrink: 0;
+            width: 130px; /* Slightly smaller image */
+            height: 130px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid slategray; /* Changed border to slategray */
+            box-shadow: 0 0 10px rgba(112, 128, 144, 0.4); /* Changed glow to slategray */
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: none; /* Removed grayscale filter for clarity */
+            object-position: center top; /* Adjust focus to top of image if needed */
+        }
+
+        .header-content {
+            flex-grow: 1;
+        }
+
+        .header-content h1 {
+            color: slategray; /* Changed name color to slategray */
+            font-size: 2.3em; /* Adjusted font size */
+            margin: 0 0 5px 0;
+            letter-spacing: 1.2px;
+            font-weight: 700; /* Bolder */
+        }
+
+        .header-content h2 {
+            color: #f0f0f0; /* Lighter white for profession */
+            font-size: 1.4em; /* Adjusted font size */
+            margin: 0 0 15px 0;
+            font-weight: 500; /* Medium weight */
+        }
+
+        .header-content p {
+            font-size: 0.9em; /* Smaller text */
+            line-height: 1.5;
+            color: #b0b0b0; /* Slightly darker grey */
+        }
+
+        .edit-icon {
+            position: absolute;
+            top: 20px;
+            right: 25px; /* Adjusted right position */
+            color: slategray; /* Changed icon color to slategray */
+            font-size: 1.3em; /* Slightly smaller icon */
+            cursor: pointer;
+            padding: 5px; /* Make it easier to click */
+        }
+
+        /* Main resume content area */
+        .resume-content {
+            display: flex;
+            gap: 30px;
+            padding: 30px; /* Padding for the entire content area */
+            background-color: transparent; /* This remains transparent as its parent has the background */
+        }
+
+        /* Column styling */
+        .left-column,
+        .right-column {
+            flex: 1;
+            min-width: 300px; /* Ensure columns don't get too narrow */
+        }
+
+        /* Individual section blocks */
+        .section-block {
+            background-color: rgba(44, 44, 44, 0.9); /* Darker background with 90% opacity */
+            border-radius: 8px; /* Rounded corners */
+            margin-bottom: 25px; /* Spacing between blocks */
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3); /* Softer shadow */
+            padding: 25px; /* Inner padding */
+            border: 1px solid #3a3a3a; /* Subtle border for definition */
+            position: relative; /* For the green indicator line */
+            overflow: hidden; /* Ensure content within block is contained */
+        }
+        .section-block:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Slategray indicator line on left of sections */
+        .section-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 5px; /* Thickness of the line */
+            background-color: slategray; /* Changed line color to slategray */
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
+
+        /* Section titles */
+        .section-block h2 {
+            color: #a78bfa; /* Changed titles to slategray */
+            font-size: 1.3em; /* Adjusted font size */
+            margin-top: 0;
+            margin-bottom: 15px;
+            padding-left: 0; /* No padding needed here due to ::before */
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            font-weight: 600; /* Semi-bold */
+        }
+
+        /* Sub-titles within sections */
+        .section-block h3 {
+            color: #7dd3fc;
+            font-size: 1em; /* Adjusted font size */
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        /* Paragraph text */
+        .section-block p {
+            line-height: 1.4;
+            margin-bottom: 8px;
+            font-size: 0.85em;
+            color: #b0b0b0;
+        }
+        .section-block p strong {
+            color: #e0e0e0;
+        }
+
+        /* List styling */
+        .section-block ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .section-block ul li {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: flex-start;
+            font-size: 0.85em;
+            color: #b0b0b0;
+        }
+        .section-block ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-block ul li .fas,
+        .section-block ul li .fab,
+        .section-block ul li .svg-icon { /* Include svg-icon for styling custom SVG */
+            color: slategray; /* Changed icons to slategray */
+            margin-right: 10px;
+            font-size: 0.9em; /* Smaller icons */
+            flex-shrink: 0;
+            padding-top: 2px;
+        }
+
+        /* Duration and location text */
+        .duration, .location {
+            font-style: italic;
+            color: #888;
+            margin-bottom: 5px;
+            font-size: 0.8em; /* Smaller */
+        }
+
+        /* Spacing for experience/project/education items */
+        .experience-item,
+        .project-item,
+        .education-item {
+            margin-bottom: 18px; /* Slightly less spacing */
+        }
+        .experience-item:last-child,
+        .project-item:last-child,
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Styles for links */
+        a {
+            color: #38bdf8; /* Cyan for links (retained for contrast) */
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        a:hover {
+            color: #a78bfa; /* Changed link hover to slategray */
+        }
+
+        /* Software proficiency grid */
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); /* Adjusted column width */
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .software-item {
+            text-align: center;
+            padding: 15px 10px; /* Adjusted padding */
+            background-color: rgba(26, 26, 26, 0.9); /* Darker background with 90% opacity */
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+            border: 1px solid #333333; /* Slightly more prominent border */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .software-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.5);
+        }
+
+        /* Specific colors for each software logo */
+        .software-item .icon-splunk { color: #FF6700; fill: #FF6700; } /* Vibrant Orange */
+        .software-item .icon-qradar { color: #007bff; fill: #007bff; } /* Blue */
+        .software-item .icon-nmap { color: #00BCD4; fill: #00BCD4; } /* Cyan */
+        .software-item .icon-metasploit { color: #DC3545; fill: #DC3545; } /* Red */
+        .software-item .icon-wireshark { color: #8A2BE2; fill: #8A2BE2; } /* BlueViolet */
+        .software-item .icon-python { color: #306998; fill: #306998; } /* Python Blue */
+        .software-item .icon-react { color: #61DAFB; fill: #61DAFB; } /* React Blue */
+        .software-item .icon-nodejs { color: #68A063; fill: #68A063; } /* Node.js Green */
+        .software-item .icon-mongodb { color: #4DB33D; fill: #4DB33D; } /* MongoDB Green */
+
+
+        .software-item .fab, .software-item .fas, .software-item .svg-icon {
+            font-size: 2.5em; /* Larger icons */
+            /* Default color removed here, applied via specific classes above */
+            margin-bottom: 8px; /* More space below icon */
+            width: 1em; /* Ensures SVG scales correctly */
+            height: 1em;
+            /* Default fill removed here, applied via specific classes above */
+        }
+
+        .software-item p {
+            font-size: 0.75em; /* Smaller text for labels */
+            margin: 0;
+            color: #e0e0e0;
+            font-weight: 500;
+        }
+
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px; /* Reduced overall padding */
+            }
+            .resume-container {
+                border-radius: 0; /* Full width on smaller screens */
+                margin: 0;
+                min-height: 100vh; /* Fill screen height */
+            }
+            .header-section {
+                flex-direction: column; /* Stack header content vertically */
+                text-align: center;
+                padding: 25px 20px;
+                gap: 15px;
+            }
+            .header-content h1 {
+                font-size: 2em;
+            }
+            .header-content h2 {
+                font-size: 1.2em;
+            }
+            .profile-img-container {
+                width: 100px;
+                height: 100px;
+            }
+            .edit-icon {
+                top: 15px;
+                right: 15px;
+                font-size: 1.1em;
+            }
+            .resume-content {
+                flex-direction: column; /* Stack columns vertically */
+                gap: 20px;
+                padding: 20px;
+            }
+            .section-block {
+                margin-bottom: 20px;
+                padding: 20px;
+            }
+            .section-block h2 {
+                font-size: 1.2em;
+            }
+            .software-grid {
+                grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); /* Adjust grid for smaller items */
+                gap: 10px;
+            }
+            .software-item {
+                padding: 10px 5px;
+            }
+            .software-item .fab, .software-item .fas, .software-item .svg-icon {
+                font-size: 2em;
+            }
+            .software-item p {
+                font-size: 0.7em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .resume-container {
+                border-radius: 0; /* Ensure no border radius on very small screens */
+            }
+            .header-section {
+                padding: 20px 15px;
+            }
+            .resume-content {
+                padding: 15px;
+            }
+            .section-block {
+                padding: 15px;
+            }
+        }
+
+        /* Print-specific styles */
+        @media print {
+            body {
+                background-color: white; /* White background for print */
+                background-image: none; /* No background image on print */
+                padding: 0; /* No padding on body for print */
+            }
+
+            .resume-container {
+                max-width: 210mm; /* A4 width */
+                min-height: 297mm; /* A4 height */
+                width: auto;
+                height: auto;
+                margin: 0; /* No margin on print */
+                box-shadow: none; /* No shadow on print */
+                border-radius: 0; /* No rounded corners on print */
+                background-color: white; /* Solid white background for resume content */
+                color: black; /* Default text color for print */
+                page-break-after: always; /* Ensure each resume fits on a new page if content overflows */
+            }
+
+            .header-section {
+                background: #1a1a1a; /* Solid black for print */
+                color: white; /* Ensure text is visible on dark background */
+                padding: 30px 25px; /* Adjusted padding for print */
+            }
+
+            .profile-img-container {
+                border-color: slategray; /* Maintain slategray border */
+                box-shadow: none; /* No glow on print */
+            }
+
+            .header-content h1,
+            .header-content h2,
+            .header-content p {
+                color: white; /* Ensure text is white on dark header */
+            }
+            .header-content h1 {
+                color: slategray; /* Maintain slategray for main name */
+            }
+
+
+            .edit-icon {
+                display: none; /* Hide edit icon on print */
+            }
+
+            .resume-content {
+                padding: 25px; /* Adjusted padding for print */
+                background-color: white; /* Solid white background for resume content */
+            }
+
+            .section-block {
+                background-color: #f0f0f0; /* Light grey background for sections on print */
+                box-shadow: none; /* No shadow on print */
+                border: 1px solid #ddd; /* Lighter border for print */
+                margin-bottom: 20px; /* Adjust spacing for print */
+            }
+
+            .section-block::before {
+                background-color: slategray; /* Maintain slategray line */
+            }
+
+            .section-block h2,
+            .section-block h3,
+            .section-block p,
+            .section-block ul li,
+            .duration, .location {
+                color: #333; /* Darker text for readability on light background */
+            }
+            .section-block h2 {
+                color: slategray; /* Maintain slategray for section titles */
+            }
+
+            .section-block ul li .fas,
+            .section-block ul li .fab,
+            .section-block ul li .svg-icon {
+                color: slategray; /* Maintain slategray for icons */
+                fill: slategray;
+            }
+
+            .software-item {
+                background-color: #e0e0e0; /* Lighter background for software items */
+                box-shadow: none; /* No shadow on print */
+                border: 1px solid #ccc; /* Lighter border */
+            }
+            .software-item:hover {
+                transform: none; /* Remove hover effect */
+                box-shadow: none;
+            }
+
+            a {
+                color: #000080; /* Darker blue for links on print */
+                text-decoration: underline; /* Underline links for clarity */
+            }
+            /* Specific print colors for software logos - ensure they are visible */
+            .software-item .icon-splunk { color: #CC5500 !important; fill: #CC5500 !important; }
+            .software-item .icon-qradar { color: #0056b3 !important; fill: #0056b3 !important; }
+            .software-item .icon-nmap { color: #008C99 !important; fill: #008C99 !important; }
+            .software-item .icon-metasploit { color: #AA0000 !important; fill: #AA0000 !important; }
+            .software-item .icon-wireshark { color: #6A0DAD !important; fill: #6A0DAD !important; }
+            .software-item .icon-python { color: #20507F !important; fill: #20507F !important; }
+            .software-item .icon-react { color: #3090C7 !important; fill: #3090C7 !important; }
+            .software-item .icon-nodejs { color: #407040 !important; fill: #407040 !important; }
+            .software-item .icon-mongodb { color: #308030 !important; fill: #308030 !important; }
+        }
+
+        /* Navbar styles */
+         #navbar {
+            width: 100%;
+            max-width: 900px;
+            margin: 32px auto 0 auto;
+            left: 0;
+            right: 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center nav content */
+            background: rgba(30, 30, 40, 0.95);
+            color: #e0e0e0;
+            padding: 0 32px;
+            height: 64px;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(44, 44, 44, 0.15);
+            border-radius: 12px;
+        }
+        #navbar > div,
+        #navbar > ul,
+        #navbar > button {
+            position: static;
+        }
+        #navbar .text-2xl {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #a78bfa;
+            letter-spacing: 1px;
+            transition: color 0.2s;
+            margin-right: 32px;
+        }
+        #navbar .text-2xl:hover {
+            color: #c084fc;
+        }
+        #navbar ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        #navbar .nav-link {
+            color: #e0e0e0;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 8px 0;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+        }
+        #navbar .nav-link:hover,
+        #navbar .nav-link.active {
+            color: #a78bfa;
+            border-bottom: 2px solid #a78bfa;
+        }
+        #navbar button#mobile-menu-button {
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            color: #e0e0e0;
+            display: none;
+        }
+        @media (max-width: 900px) {
+            #navbar {
+                padding: 0 8px;
+                max-width: 100vw;
+            }
+            #navbar .text-2xl {
+                margin-right: 16px;
+            }
+            #navbar ul {
+                gap: 1rem;
+            }
+        }
+        @media (max-width: 768px) {
+            #navbar ul {
+                display: none;
+            }
+            #navbar button#mobile-menu-button {
+                display: block;
+            }
+        }
+
+        /* Mobile menu overlay styles */
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(30, 30, 40, 0.98);
+            z-index: 200;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        .mobile-menu-overlay.active {
+            display: flex;
+        }
+        .mobile-menu-overlay button {
+            width: 90vw;
+            max-width: 340px;
+            margin: 0.5rem 0;
+            padding: 1rem 1.5rem;
+            background: none;
+            border: none;
+            border-radius: 8px;
+            color: #e0e0e0;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: background 0.2s, color 0.2s;
+            cursor: pointer;
+        }
+        .mobile-menu-overlay button:hover {
+            background: #3b0764;
+            color: #a78bfa;
+        }
+        .mobile-menu-overlay i {
+            color: #a78bfa;
+        }
+        @media (max-width: 768px) {
+            .mobile-menu-overlay {
+                display: none;
+            }
+        }
+
+        /* Center the resume container vertically and horizontally */
+        .resume-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 48px auto 32px auto;
+            background-color: rgba(26, 26, 26, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 900px) {
+            .resume-container {
+                margin: 32px auto 16px auto;
+            }
+        }
+        @media (max-width: 768px) {
+            .resume-container {
+                margin: 16px auto 8px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="text-2xl font-bold text-purple-400 cursor-pointer" onclick="window.location.href='index.html'">
+            DHEERAJ SAI
+        </div>
+        <ul>
+            <li><a class="nav-link" href="index.html">Home</a></li>
+            <li><a class="nav-link" href="about.html">About Me</a></li>
+            <li><a class="nav-link" href="education.html">Education</a></li>
+            <li><a class="nav-link" href="skills.html">Skills</a></li>
+            <li><a class="nav-link" href="projects.html">Projects</a></li>
+            <li><a class="nav-link active" href="resume1.html">Resume</a></li>
+            <li><a class="nav-link" href="contact.html">Contact Me</a></li>
+        </ul>
+        <button id="mobile-menu-button" class="md:hidden text-gray-300 focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </nav>
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay">
+        <button class="text-3xl font-bold text-gray-200 hover:text-purple-400 transition-colors flex items-center space-x-3" onclick="window.location.href='index.html'">
+            <i data-lucide="home" class="w-8 h-8"></i><span>Home</span>
+        </button>
+        <button class="text-3xl font-bold text-gray-200 hover:text-purple-400 transition-colors flex items-center space-x-3" onclick="window.location.href='about.html'">
+            <i data-lucide="user" class="w-8 h-8"></i><span>About Me</span>
+        </button>
+        <button class="text-3xl font-bold text-gray-200 hover:text-purple-400 transition-colors flex items-center space-x-3" onclick="window.location.href='education.html'">
+            <i data-lucide="graduation-cap" class="w-8 h-8"></i><span>Education</span>
+        </button>
+        <button class="text-3xl font-bold text-gray-200 hover:text-purple-400 transition-colors flex items-center space-x-3" onclick="window.location.href='skills.html'">
+            <i data-lucide="code" class="w-8 h-8"></i><span>Skills</span>
+        </button>
+        <button class="text-3xl font-bold text-gray-200 hover:text-purple-400 transition-colors flex items-center space-x-3" onclick="window.location.href='projects.html'">
+            <i data-lucide="briefcase" class="w-8 h-8"></i><span>Projects</span>
+        </button>
+        <button class="text-3xl font-bold text-gray-200 hover:text-purple-400 transition-colors flex items-center space-x-3" onclick="window.location.href='resume1.html'">
+            <i data-lucide="file-text" class="w-8 h-8"></i><span>Resume</span>
+        </button>
+        <button class="text-3xl font-bold text-gray-200 hover:text-purple-400 transition-colors flex items-center space-x-3" onclick="window.location.href='contact.html'">
+            <i data-lucide="mail" class="w-8 h-8"></i><span>Contact Me</span>
+        </button>
+    </div>
+    <div class="resume-container">
+        <div class="header-section">
+            <div class="profile-img-container">
+                <!-- Profile image set with contentFetchId -->
+                <img src="assets\images\Dheeraj.jpg" alt="Profile Picture">
+            </div>
+            <div class="header-content">
+                <h1>DONEPUDI DHEERAJ SAI</h1>
+                <h2>Cyber Security Practitioner</h2>
+                <p>Enthusiastic Cyber Security practitioner possessing a strong background in Security Operations Centre (SOC) monitoring, penetration testing, and ethical hacking. Proficient in Python for both automation and security scripting along with full-stack development for the secure building of applications. Well versed in finding vulnerabilities, reducing security risks, and implementing strong security solutions.</p>
+            </div>
+            <i class="fas fa-pencil-alt edit-icon"></i>
+        </div>
+
+        <main class="resume-content">
+            <section class="left-column">
+                <div class="section-block">
+                    <h2>Contact</h2>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +91 8143965686</li>
+                        <li><i class="fas fa-envelope"></i> dheerajdonepudi18@gmail.com</li>
+                        <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/dheerajdonepudi-320145276" target="_blank">LinkedIn Profile</a></li>
+                        <li><i class="fab fa-github"></i> <a href="https://github.com/dheerajdonepudi14" target="_blank">GitHub Profile</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Vijayawada, Andhra Pradesh</li>
+                    </ul>
+                </div>
+
+                <div class="section-block">
+                    <h2>Core Skills</h2>
+                    <ul>
+                        <li><i class="fas fa-shield-alt"></i> <strong>Security & Monitoring:</strong> SOC Monitoring (Splunk, QRadar), Penetration Testing & Ethical Hacking (Metasploit, Burp Suite, Nmap), Vulnerability Assessment (Nessus, OpenVAS, Wireshark), Network Security (Firewalls, VPNs, TCP/IP, IDS/IPS)</li>
+                        <li><i class="fas fa-laptop-code"></i> <strong>Development & Automation:</strong> Python (Security Automation & Scripting), Full‑Stack Development (React, Node.js, MongoDB), Web Technologies (HTML5, CSS3, JavaScript)</li>
+                        <li><i class="fas fa-cloud"></i> <strong>Cloud:</strong> Azure, AWS</li>
+                    </ul>
+                </div>
+
+                <div class="section-block">
+                    <h2>Software Proficiency</h2>
+                    <div class="software-grid">
+                        <div class="software-item">
+                            <i class="fas fa-Chart-Area icon-splunk"></i> <!-- Added specific class -->
+                            <p>Splunk</p>
+                        </div>
+                        <div class="software-item">
+                            <i class="fas fa-fingerprint icon-qradar"></i> <!-- Added specific class -->
+                            <p>QRadar</p>
+                        </div>
+                        <div class="software-item">
+                            <i class="fas fa-network-wired icon-nmap"></i> <!-- Added specific class -->
+                            <p>Nmap</p>
+                        </div>
+                        <div class="software-item">
+                            <i class="fas fa-flask icon-metasploit"></i> <!-- Added specific class -->
+                            <p>Metasploit</p>
+                        </div>
+                        <div class="software-item">
+                            <i class="fas fa-filter icon-wireshark"></i> <!-- Added specific class -->
+                            <p>Wireshark</p>
+                        </div>
+                        <div class="software-item">
+                            <i class="fab fa-python icon-python"></i> <!-- Added specific class -->
+                            <p>Python</p>
+                        </div>
+                        <div class="software-item">
+                            <i class="fab fa-react icon-react"></i> <!-- Added specific class -->
+                            <p>React</p>
+                        </div>
+                        <div class="software-item">
+                            <i class="fab fa-node-js icon-nodejs"></i> <!-- Added specific class -->
+                            <p>Node.js</p>
+                        </div>
+                        <div class="software-item">
+                            <i class="fas fa-database icon-mongodb"></i> <!-- Added specific class -->
+                            <p>MongoDB</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-block">
+                    <h2>Soft Skills</h2>
+                    <ul>
+                        <li><i class="fas fa-lightbulb"></i> Analytical Thinking</li>
+                        <li><i class="fas fa-comments"></i> Clear Communication</li>
+                        <li><i class="fas fa-users"></i> Team Collaboration</li>
+                        <li><i class="fas fa-search-plus"></i> Attention to Detail</li>
+                        <li><i class="fas fa-sync-alt"></i> Adaptability to New Technologies/Hybrid Environments</li>
+                    </ul>
+                </div>
+
+                <div class="section-block">
+                    <h2>Certifications</h2>
+                    <ul>
+                        <li><i class="fas fa-certificate"></i> Cybersecurity Professional Certification</li>
+                        <li><i class="fas fa-certificate"></i> Fortinet Network Associate Certification</li>
+                        <li><i class="fas fa-certificate"></i> Python Certification</li>
+                        <li><i class="fas fa-certificate"></i> HTML, CSS And JavaScript Certification</li>
+                    </ul>
+                </div>
+
+                <div class="section-block">
+                    <h2>Education</h2>
+                    <div class="education-item">
+                        <h3>Bachelor of Technology in Computer Science (Cyber Security)</h3>
+                        <p>Vasireddy Venkatadri Institute of Technology, Guntur</p>
+                        <p class="duration">Completed: 2025 | CGPA: 7.5</p>
+                    </div>
+                    <div class="education-item">
+                        <h3>Intermediate</h3>
+                        <p>Sri Chaitanya Junior College, Vijayawada</p>
+                        <p class="duration">Completed: 2021 | Percentage: 85%</p>
+                    </div>
+                    <div class="education-item">
+                        <h3>School</h3>
+                        <p>Sri Chaitanya International Olympiad, Vijayawada</p>
+                        <p class="duration">Completed: 2025 | Percentage: 80%</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="right-column">
+                <div class="section-block">
+                    <h2>Internship / Practical Experience</h2>
+                    <div class="experience-item">
+                        <h3>Cybersecurity Intern</h3>
+                        <p>Palo Alto Networks Intern</p>
+                        <p class="duration">December 2022 – February 2023</p>
+                        <ul>
+                            <li>Assisted in configuring and managing firewall policies to enhance network security.</li>
+                            <li>Conducted vulnerability assessments and penetration testing to identify and mitigate security risks.</li>
+                            <li>Monitored and analyzed security logs using Splunk and QRadar to detect potential threats.</li>
+                            <li>Investigated security incidents and assisted in the development of response strategies.</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item">
+                        <h3>Fortinet Network Associate Intern</h3>
+                        <p class="duration">March 2024 – May 2024</p>
+                        <ul>
+                            <li>Completed the Fortinet Network Associate (FNA) online program, gaining a solid understanding of the Fortinet Security Fabric and core network security concepts.</li>
+                            <li>Configured and managed FortiGate firewalls, including policy creation for segmentation, NAT, and site‑to‑site VPN tunnels.</li>
+                            <li>Monitored network traffic and security events using FortiAnalyzer and FortiManager, analyzing logs to identify anomalies and optimize rule sets.</li>
+                            <li>Performed hands‑on lab exercises simulating threat scenarios, deploying IPS, antivirus, and web‑filtering features to harden network infrastructure.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section-block">
+                    <h2>Hands-On Projects</h2>
+                    <div class="project-item">
+                        <h3>1.) Real‑time Deep Learning Detection</h3>
+                        <ul>
+                            <li>Users upload Windows executables via a responsive web UI, and a pre‑trained Keras model analyzes static PE features to classify files as malicious or benign.</li>
+                            <li><strong>Full‑Stack Flask Backend:</strong> Implements secure user authentication, file handling, feature extraction (using pefile), model inference, MongoDB‑backed history logging, and styled email notifications of results.</li>
+                            <li><strong>Interactive Visualization:</strong> Chart.js bar graphs in pop‑up modals display feature‑level analysis, while the UI supports drag‑and-drop uploads, smooth animations, and session controls.</li>
+                            <li><strong>Automated EDR Monitoring:</strong> A Watchdog‑based service watches filesystem events to auto‑analyze new files and quarantine detected malware, completing the EDR response loop.</li>
+                        </ul>
+                    </div>
+                    <div class="project-item">
+                        <h3>2.) Customer Web App</h3>
+                        <ul>
+                            <li>A responsive interface where users can browse restaurants, view menus, add items to a cart, and place orders.</li>
+                            <li><strong>Backend API:</strong> A lightweight RESTful service (Python/Flask) handling user authentication, menu retrieval, and order submissions.</li>
+                            <li><strong>Database Storage:</strong> A single database (MongoDB) to store users, restaurants, menus, and orders.</li>
+                            <li><strong>Order Updates:</strong> Basic order‑status updates via periodic polling or email notifications to keep customers informed.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+     <!-- Footer -->
+    <footer class="bg-gray-950 py-8 text-center text-gray-400 text-sm border-t border-gray-800 rounded-t-xl">
+        <p>&copy; <span id="current-year"></span> DONEPUDI DHEERAJ SAI. All rights reserved.</p>
+        <div class="flex justify-center space-x-4 mt-4">
+            <a href="https://www.linkedin.com/in/dheeraj-donepudi-320145276/" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition-colors">
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+            </a>
+            <a href="https://github.com/dheerajdonepudi14" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition-colors">
+                <i data-lucide="github" class="w-5 h-5"></i>
+            </a>
+        </div>
+    </footer>
+    <script>
+        // Mobile menu toggle script
+        const mobileMenuBtn = document.getElementById('mobile-menu-button');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        if (mobileMenuBtn && mobileMenuOverlay) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuOverlay.classList.toggle('active');
+            });
+            // Optional: close menu when clicking a link
+            mobileMenuOverlay.querySelectorAll('button').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    mobileMenuOverlay.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
